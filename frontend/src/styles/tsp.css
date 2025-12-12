@@ -1,0 +1,79 @@
+.tsp-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.city-grid {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.city-btn {
+  padding: 10px 16px;
+  background: #ddd;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.city-btn.selected {
+  background: #40739e;
+  color: white;
+}
+
+.start-btn, .solve-btn {
+  margin-top: 20px;
+  padding: 12px 22px;
+  background: #44bd32;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.distance-table table {
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.distance-table th, .distance-table td {
+  border: 1px solid black;
+  padding: 8px 14px;
+}
+
+.home-box {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+/* Input Styling */
+.player-input {
+  margin-bottom: 20px;
+}
+.player-input input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+/* Result Table */
+.result-table {
+  margin: 10px auto;
+  border-collapse: collapse;
+  width: 50%;
+  max-width: 400px;
+}
+.result-table th, .result-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.result-table th {
+  background-color: #f2f2f2;
+}
