@@ -1,0 +1,323 @@
+/* Container for Hanoi Page */
+.hanoi-container {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Split Layout */
+.hanoi-split {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+/* Left Side: Image */
+.hanoi-image-side {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.hanoi-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mask-image: linear-gradient(to right, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent);
+    transition: transform 10s ease;
+}
+
+.hanoi-image-side:hover .hanoi-hero-img {
+    transform: scale(1.05);
+}
+
+.hanoi-overlay-text {
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
+    z-index: 2;
+    max-width: 80%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    border-left: 4px solid #b026ff;
+    /* Purple Neon */
+}
+
+.hanoi-overlay-text h2 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #b026ff, #4b0082);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 5px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.hanoi-overlay-text p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Right Side: Form */
+.hanoi-form-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+}
+
+.hanoi-form-container {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(10, 15, 30, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(176, 38, 255, 0.2);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Purple Neon Top Line */
+.hanoi-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #b026ff, #8a2be2, #4b0082);
+}
+
+.hanoi-title {
+    font-size: 2.8rem;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(176, 38, 255, 0.4);
+    letter-spacing: 2px;
+}
+
+.hanoi-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.hanoi-input-group {
+    margin-bottom: 25px;
+}
+
+.hanoi-input-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #b026ff;
+    /* Purple */
+    font-size: 0.85rem;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+.hanoi-input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.hanoi-input:focus {
+    border-color: #b026ff;
+    box-shadow: 0 0 20px rgba(176, 38, 255, 0.25);
+    outline: none;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hanoi-select {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.hanoi-select option {
+    background: #111;
+    color: #fff;
+}
+
+.hanoi-btn-start {
+    width: 100%;
+    padding: 18px;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #b026ff, #8a2be2);
+    border: none;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.hanoi-btn-start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(176, 38, 255, 0.6);
+}
+
+
+/* Game Board Styles */
+.hanoi-board {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 300px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 1px solid #b026ff;
+    box-shadow: 0 0 20px rgba(176, 38, 255, 0.1);
+}
+
+.hanoi-peg-container {
+    position: relative;
+    width: 120px;
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hanoi-peg-container.selected {
+    filter: drop-shadow(0 0 10px #b026ff);
+}
+
+.hanoi-peg-base {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: #333;
+    border-radius: 4px;
+    border: 1px solid #555;
+}
+
+.hanoi-peg-pole {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 8px;
+    height: 250px;
+    background: #444;
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+.hanoi-peg-container.selected .hanoi-peg-base,
+.hanoi-peg-container.selected .hanoi-peg-pole {
+    background: #b026ff;
+    box-shadow: 0 0 15px #b026ff;
+}
+
+.hanoi-label {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--text-muted);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+}
+
+.hanoi-peg-container.selected .hanoi-label {
+    color: #b026ff;
+    text-shadow: 0 0 10px #b026ff;
+}
+
+
+/* Animations */
+.fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hanoi-split {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hanoi-image-side {
+        height: 200px;
+        flex: none;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .hanoi-overlay-text {
+        bottom: 20px;
+        left: 20px;
+        padding: 10px;
+    }
+
+    .hanoi-overlay-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .hanoi-container {
+        height: auto;
+        padding: 100px 20px 40px;
+        align-items: flex-start;
+    }
+
+    .hanoi-form-container {
+        box-shadow: none;
+        background: transparent;
+        border: none;
+        padding: 20px 0;
+    }
+
+    .hanoi-form-container::before {
+        display: none;
+    }
+}
