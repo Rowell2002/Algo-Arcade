@@ -1,0 +1,239 @@
+/* Container for Traffic Page */
+.ts-container {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Split Layout */
+.ts-split {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+/* Left Side: Image */
+.ts-image-side {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.ts-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mask-image: linear-gradient(to right, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent);
+    transition: transform 10s ease;
+}
+
+.ts-image-side:hover .ts-hero-img {
+    transform: scale(1.05);
+}
+
+.ts-overlay-text {
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
+    z-index: 2;
+    max-width: 80%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    border-left: 4px solid #ff0055;
+    /* Red Neon */
+}
+
+.ts-overlay-text h2 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #ff0055, #ff00cc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 5px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.ts-overlay-text p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Right Side: Form */
+.ts-form-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+}
+
+.ts-form-container {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(10, 15, 30, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(255, 0, 85, 0.2);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Red Neon Top Line */
+.ts-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff0055, #ff00cc, #ff5e00);
+}
+
+.ts-title {
+    font-size: 2.8rem;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+    letter-spacing: 2px;
+}
+
+.ts-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.ts-input-group {
+    margin-bottom: 25px;
+}
+
+.ts-input-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--secondary-neon);
+    /* Red/Pink */
+    font-size: 0.85rem;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+.ts-input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.ts-input:focus {
+    border-color: var(--secondary-neon);
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.25);
+    outline: none;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.ts-btn-start {
+    width: 100%;
+    padding: 18px;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #ff0055, #ff00cc);
+    border: none;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.ts-btn-start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(255, 0, 85, 0.6);
+}
+
+/* Animations */
+.fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ts-split {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .ts-image-side {
+        height: 200px;
+        flex: none;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .ts-overlay-text {
+        bottom: 20px;
+        left: 20px;
+        padding: 10px;
+    }
+
+    .ts-overlay-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .ts-container {
+        height: auto;
+        padding: 100px 20px 40px;
+        align-items: flex-start;
+    }
+
+    .ts-form-container {
+        box-shadow: none;
+        background: transparent;
+        border: none;
+        padding: 20px 0;
+    }
+
+    .ts-form-container::before {
+        display: none;
+    }
+}
