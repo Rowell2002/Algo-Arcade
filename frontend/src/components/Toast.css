@@ -1,0 +1,123 @@
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 16px 20px;
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10001;
+    animation: slideIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Inter', sans-serif;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.toast-info {
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.2), rgba(0, 243, 255, 0.1));
+    border-color: var(--primary-neon);
+}
+
+.toast-success {
+    background: linear-gradient(135deg, rgba(0, 255, 157, 0.2), rgba(0, 255, 157, 0.1));
+    border-color: var(--success-neon);
+}
+
+.toast-error {
+    background: linear-gradient(135deg, rgba(255, 0, 85, 0.2), rgba(255, 0, 85, 0.1));
+    border-color: var(--error-neon);
+}
+
+.toast-warning {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+    border-color: var(--accent-gold);
+}
+
+.toast-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+.toast-info .toast-icon {
+    color: var(--primary-neon);
+}
+
+.toast-success .toast-icon {
+    color: var(--success-neon);
+}
+
+.toast-error .toast-icon {
+    color: var(--error-neon);
+}
+
+.toast-warning .toast-icon {
+    color: var(--accent-gold);
+}
+
+.toast-message {
+    flex: 1;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.toast-close:hover {
+    color: var(--text-main);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .toast {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        min-width: auto;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
