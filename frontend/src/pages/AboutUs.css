@@ -1,0 +1,88 @@
+.about-us-page {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.text-content {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+.text-content h2 {
+    color: var(--primary-neon);
+    margin-bottom: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-neon);
+    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.15);
+}
+
+.profile-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.team-card:hover .profile-placeholder {
+    border-color: var(--primary-neon);
+    background: rgba(0, 243, 255, 0.1);
+}
+
+.profile-placeholder span {
+    font-family: 'Orbitron', sans-serif;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1.2rem;
+}
+
+.team-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+    color: var(--text-main);
+}
+
+.team-card .role {
+    font-size: 0.9rem;
+    color: var(--secondary-neon);
+    margin: 0;
+    font-weight: 600;
+}
